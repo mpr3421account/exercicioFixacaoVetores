@@ -13,3 +13,31 @@ conforme exemplo.
 */
 
 
+using exercicioFixacaoVetores;
+
+Console.Write("Quantos quartos serão ocupados? ");
+int n = int.Parse(Console.ReadLine());
+
+Estudante[] estudantes= new Estudante[10];
+
+for(int i = 1; i <= n; i++)
+{
+    Console.WriteLine();
+    Console.WriteLine($"Aluguel #{i}:");
+    Console.Write("Nome: ");
+    string nome = Console.ReadLine();
+    Console.Write("e-mail: ");
+    string email = Console.ReadLine();
+    Console.Write("Quarto: ");
+    int quarto = int.Parse(Console.ReadLine());
+    estudantes[quarto] = new Estudante(nome, email);
+}
+Console.WriteLine("Quartos ocpados:");
+Console.WriteLine();
+for (int i = 0;i<10; i++)
+{
+    if (estudantes[i] != null)
+    {
+        Console.WriteLine(i + ": "+ estudantes[i]);
+    }
+}
